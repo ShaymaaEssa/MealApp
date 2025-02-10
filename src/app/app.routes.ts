@@ -8,8 +8,11 @@ export const routes: Routes = [
 
     {path:'', component:SidebarComponent,children:[
         {path:'', redirectTo:'category/all', pathMatch:'full'},
-        {path:'category/:categoryName',component:HomeComponent ,title:'All meals'},
-        {path:'mealdetails/:mealId',component:MealDetailsComponent ,title:'Meal Detail'},
+        {path:'category/:categoryName',component:HomeComponent ,title:'All meals',
+            resolve: {
+                renderMode: () => 'ssr' // Dynamically resolving renderMode
+              }},
+        // {path:'mealdetails/:mealId',component:MealDetailsComponent ,title:'Meal Detail'},
 
     ]},
     
