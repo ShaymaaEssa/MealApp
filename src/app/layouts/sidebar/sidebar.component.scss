@@ -1,0 +1,53 @@
+$active-color: orange;
+$active-text: white;
+
+li{
+    &:hover{
+        transform: scale(1.04);
+        -webkit-transform: scale(1.04);
+        -moz-transform: scale(1.04);
+        -ms-transform: scale(1.04);
+        -o-transform: scale(1.04);
+        box-shadow: none;
+
+        
+}
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 15px;
+    padding: 10px 20px;
+    
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border:1px solid rgb(209 213 219);
+    cursor: pointer;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+button{
+    font: {
+        family: cursive;
+        size: 18px;
+        weight: 500;
+    }
+    
+}
+
+.active{
+
+    background-color: $active-color;
+    color: $active-text;
+    border:1px solid $active-color;
+    box-shadow: 0 4px 6px rgba(255, 165, 0, 0.5); // Orange shadow
+}
+
+
+

@@ -1,0 +1,18 @@
+@font-face {
+  font-family: pacific;
+  src: url("../../../assets/fonts/Pacifico-Regular.ttf");
+}
+section {
+  background-color: #F4F2EE;
+}
+
+h1 {
+  font-family: pacific;
+  font-size: 36px;
+  line-height: 40px;
+  color: blue;
+  background: linear-gradient(to right, orange, red, blue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}/*# sourceMappingURL=home.component.css.map */

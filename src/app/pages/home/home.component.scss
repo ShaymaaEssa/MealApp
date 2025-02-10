@@ -1,0 +1,26 @@
+$background: #F4F2EE;
+
+@font-face {
+    font-family: pacific;
+    src: url("../../../assets/fonts/Pacifico-Regular.ttf");
+}
+
+section{
+    background-color: $background;
+}
+
+h1{
+    font: {
+        family: pacific;
+        size: 36px;
+        
+    }
+    line-height: 40px;
+    color: blue; // Fallback color for older browsers
+    background: linear-gradient(to right, orange, red, blue);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    
+
+}

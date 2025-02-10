@@ -1,0 +1,63 @@
+<section class="sm:pt-7 ms-8 lg:ms-0">
+    <div class="container py-8 px-4 mx-auto ">
+        <h1 class="text-orange-500">Learn, Cook, Eat Your Food</h1>
+
+        <div class="sm:hidden">
+            
+
+            <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" type="button">Dropdown button <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg>
+                </button>
+                
+                <!-- Dropdown menu -->
+                <div id="dropdown" class="z-10 w-3/4 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm  dark:bg-gray-700">
+                    <ul class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" aria-labelledby="dropdownDefaultButton">
+                        <li>
+                            <a [routerLink]="'/category/all'" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">All</a>
+                          </li>
+                       
+                        @for (item of categoriesArr; track item.idCategory) {
+                            <li>
+                                <a [routerLink]="['/category', item.strCategory]" routerLinkActive="bg-blue-400 " class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{{item.strCategory}}</a>
+                              </li>
+                        }
+
+
+                    </ul>
+                </div>
+                
+
+        </div>
+
+        <div class="hidden sm:flex flex-row gap-6 flex-wrap mt-4 border-b border-b-gray-300">
+            <button [routerLink]="'/category/all'" routerLinkActive="bg-black text-white" class="border border-gray-500 py-3 px-4 rounded-full">All</button>
+
+            @for (item of categoriesArr; track item.idCategory) {
+                <button [routerLink]="['/category', item.strCategory]" routerLinkActive="bg-black text-white"  class="border border-gray-500 py-3 px-4 rounded-full">{{item.strCategory}}</button>
+            }
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <div class="grid sm:grid-cols-4 gap-8 mb-4">
+        @for (meal of mealsArr; track meal.idMeal) {
+            <div class="meal bg-white text-center rounded-[20%] hover:scale-105 transition-all group">
+                <div class="img rounded-full w-1/2 mx-auto -translate-y-5 group-hover:rotate-[360deg] duration-700 transition-all">
+                    <img [src]="meal.strMealThumb" alt="meal image" class="w-full rounded-full">
+                </div>
+                <p class=" text-[20px] font-[600] font-[cursive] mb-4">{{meal.strMeal}}</p>
+                <button type="button" class="text-[16px] font-[600] font-[cursive] text-white bg-green-500 hover:bg-green-700 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300  rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 transition-all">View Recipe</button>
+    
+    
+            </div>
+        }
+
+
+    </div>
+</section>
+
+
+
